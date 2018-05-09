@@ -1,2 +1,50 @@
 
-<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=fb-messenger://user/791437060988776">
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>azure blob</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//releases.flowplayer.org/6.0.5/skin/minimalist.css">
+  <link rel="stylesheet" href="//releases.flowplayer.org/quality-selector/flowplayer.quality-selector.css">
+  <style>
+    .flowplayer {
+      width: 70%;
+      background-color: #f0ffff;
+    }
+  </style>
+
+  <script src="//releases.flowplayer.org/6.0.5/flowplayer.min.js"></script>
+  <script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script>
+<script>
+window.onload = function () {
+
+  flowplayer("#player", {
+    ratio: 9/16,
+    hlsjs: location.search.indexOf("hlsjs=false") < 0,
+    hlsQualities: [1, 4, 5, 7],
+    clip: {
+      sources: [
+        { type: "application/x-mpegurl",
+          // note appended .m3u8 suffix for flash hls
+          // note audio-only-false
+          src: "http://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest(format=m3u8-aapl-v3,audio-only=false).m3u8"
+          //src: "http://tmobilemediaservice.streaming.mediaservices.windows.net/57082016-d1cc-4ebc-aab9-4cb77e340d88/984e58fd05fc90f14e577b82a02d9c59.ism/manifest(video,format=m3u8-aapl-v3,audiotrack=audio).m3u8"
+        }
+      ]
+    }
+  });
+
+};
+</script>
+</head>
+
+<body>
+  <h1>azure</h1>
+
+  <div id="player"></div>
+
+</body>
+</html>
